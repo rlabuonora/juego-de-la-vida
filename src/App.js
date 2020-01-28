@@ -131,14 +131,25 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+	    <div className="App">
+	    <h3> El Juego de la Vida </h3>
+	    <div className="texto">
+            <p>El juego de la vida de John Conway es un simulador de autómatas celulares. El objetivo del simulador es mostrar como a partir de pocas reglas simples se pueden obtener sistemas con comportamientos complejos y caóticos.</p>
+
+	    <p>Estas son las reglas del juego: Luego de cada generación, cada celda van a sobrevivir si está rodeados de suficientes celdas vivas. Para cada celda, si tiene 2 organismos vivos alrededor se mantiene viva y si tiene menos se muere. Si una celda está muerta pero tiene 3 celdas vivas alrededor, revive. Para hacer un experimento, selecciona las celdas que empiezan vivas y apreta play para que empiece la simulación.
+            </p>
+	    </div>
 
 	    <div className="row">
-  	      <Generation t={this.state.t} />
+	    <span className="generacion">
+              Generación: {this.state.t}
+	    </span>
+            <span className="botones">
 	      <PlayButton onClick={this.handlePlay.bind(this)}
                           on={this.state.on}
 	                  className="play" />
               <StopButton className="stop" stop={this.stop.bind(this)} />
+	    </span>
 	    </div>
 	    <div className="row">
 	    
@@ -149,22 +160,13 @@ class App extends Component {
                	  cellSize={25}
 	    />
 
-	    <div className="row">
-	      
-	    </div>
 	</div>
       </div>
     );
   }
 }
 
-class Generation extends Component {
-  render() {
-      return (
-        <h3>Generación: {this.props.t}</h3>
-      );
-  }
-}
+
 
 class Grid extends Component {
   getDims() {
@@ -240,7 +242,7 @@ class PlayButton extends Component {
   render() {
       return (
               <button onClick={this.props.onClick.bind(this)}
-	              className="btn btn-primary"> {this.icon() }
+	              className="btn btn-secondary"> {this.icon() }
 	      </button>
       );
   }
@@ -250,7 +252,7 @@ class StopButton extends Component {
   render() {
       return (
               <button onClick={this.props.stop}
-	              className="btn btn-primary"> 
+	              className="btn btn-secondary"> 
 	        <i className="fa fa-stop" aria-hidden="true"></i>
 	      </button>
       );

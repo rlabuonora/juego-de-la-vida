@@ -36,3 +36,29 @@
     transform: rotate(360deg);
   }
 }
+
+
+.generacion {
+    margin-left: 40px;
+
+}
+
+.btn {
+    margin-left: 5px;
+    margin-bottom: 5px;
+
+}
+
+.botones {
+    margin-left: 250px;
+}
+
+p {
+    text-align: left;
+
+}
+
+.texto {
+    margin-bottom: 40px;
+}
+
