@@ -4,7 +4,14 @@ import './App.css';
 class App extends Component {
   constructor(props) {
     super(props);
-    var initialGrid = this.emptyGrid(this.props.cols, this.props.rows);
+    var initialGrid = this.emptyGrid(this.props.cols, this.props.rows); // bug!
+
+    // Block
+    initialGrid = this.toggleCell(initialGrid, 10, 10);
+    initialGrid = this.toggleCell(initialGrid, 10, 11);
+    initialGrid = this.toggleCell(initialGrid, 9, 10);
+    initialGrid = this.toggleCell(initialGrid, 9, 11);
+
     this.state = {
 	  t: 0,
 	  on: false,
@@ -70,7 +77,6 @@ class App extends Component {
       });
     })
   }
-
   emptyGrid() { 
     var width = this.props.cols;
     var height = this.props.rows;
