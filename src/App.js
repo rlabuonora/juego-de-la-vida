@@ -7,14 +7,14 @@ class App extends Component {
     var initialGrid = this.emptyGrid(this.props.cols, this.props.rows); // bug!
 
     // Inicializar un Beacon
-    initialGrid = this.toggleCell(initialGrid, 5, 8);
-    initialGrid = this.toggleCell(initialGrid, 5, 9);
-    initialGrid = this.toggleCell(initialGrid, 6, 8);
-    initialGrid = this.toggleCell(initialGrid, 6, 9);
-    initialGrid = this.toggleCell(initialGrid, 7, 10);
-    initialGrid = this.toggleCell(initialGrid, 7, 11);
-    initialGrid = this.toggleCell(initialGrid, 8, 10);
-    initialGrid = this.toggleCell(initialGrid, 8, 11);
+    initialGrid = this.toggleCell(initialGrid, 2, 2);
+    initialGrid = this.toggleCell(initialGrid, 2, 3);
+    initialGrid = this.toggleCell(initialGrid, 3, 2);
+    initialGrid = this.toggleCell(initialGrid, 3, 3);
+    initialGrid = this.toggleCell(initialGrid, 4, 4);
+    initialGrid = this.toggleCell(initialGrid, 4, 5);
+    initialGrid = this.toggleCell(initialGrid, 5, 4);
+    initialGrid = this.toggleCell(initialGrid, 5, 5);
 
     this.state = {
 	  t: 0,
@@ -142,6 +142,7 @@ class App extends Component {
   render() {
     return (
 	    <div className="App">
+   	    <div className="col-lg-6">
 	    <div className="row">
 	      <span className="generacion">
                 Generación: {this.state.t}
@@ -163,6 +164,7 @@ class App extends Component {
 
 	    </div>
             </div>
+	    </div>
     );
   }
 }
