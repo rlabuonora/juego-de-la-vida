@@ -7,10 +7,10 @@ class App extends Component {
     var initialGrid = this.emptyGrid(this.props.cols, this.props.rows); // bug!
 
     // Block
-    initialGrid = this.toggleCell(initialGrid, 10, 10);
-    initialGrid = this.toggleCell(initialGrid, 10, 11);
-    initialGrid = this.toggleCell(initialGrid, 9, 10);
-    initialGrid = this.toggleCell(initialGrid, 9, 11);
+    initialGrid = this.toggleCell(initialGrid, 5, 8);
+    initialGrid = this.toggleCell(initialGrid, 5, 9);
+    initialGrid = this.toggleCell(initialGrid, 6, 8);
+    initialGrid = this.toggleCell(initialGrid, 6, 9);
 
     this.state = {
 	  t: 0,
@@ -208,7 +208,7 @@ class Grid extends Component {
 
 class Cell extends Component {
   getColor() {
-      return this.props.live ? "black" : "white";
+      return this.props.live ? "grey" : "white";
   }
   getSVGPos() { 
   // Transforma las coordenadas de la grilla a coordenadas del SVG
