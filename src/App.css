@@ -62,3 +62,12 @@ p {
     margin-bottom: 40px;
 }
 
+img {
+    margin-left: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+span.gh {
+    margin-left: 400px;
+}

@@ -6,11 +6,15 @@ class App extends Component {
     super(props);
     var initialGrid = this.emptyGrid(this.props.cols, this.props.rows); // bug!
 
-    // Block
+    // Inicializar un Beacon
     initialGrid = this.toggleCell(initialGrid, 5, 8);
     initialGrid = this.toggleCell(initialGrid, 5, 9);
     initialGrid = this.toggleCell(initialGrid, 6, 8);
     initialGrid = this.toggleCell(initialGrid, 6, 9);
+    initialGrid = this.toggleCell(initialGrid, 7, 10);
+    initialGrid = this.toggleCell(initialGrid, 7, 11);
+    initialGrid = this.toggleCell(initialGrid, 8, 10);
+    initialGrid = this.toggleCell(initialGrid, 8, 11);
 
     this.state = {
 	  t: 0,
@@ -138,18 +142,10 @@ class App extends Component {
   render() {
     return (
 	    <div className="App">
-	    <h3> El Juego de la Vida </h3>
-	    <div className="texto">
-            <p>El juego de la vida de John Conway es un simulador de autómatas celulares. El objetivo del simulador es mostrar como a partir de pocas reglas simples se pueden obtener sistemas con comportamientos complejos y caóticos.</p>
-
-	    <p>Estas son las reglas del juego: Luego de cada generación, cada celda van a sobrevivir si está rodeados de suficientes celdas vivas. Para cada celda, si tiene 2 organismos vivos alrededor se mantiene viva y si tiene menos se muere. Si una celda está muerta pero tiene 3 celdas vivas alrededor, revive. Para hacer un experimento, selecciona las celdas que empiezan vivas y apreta play para que empiece la simulación.
-            </p>
-	    </div>
-
 	    <div className="row">
-	    <span className="generacion">
-              Generación: {this.state.t}
-	    </span>
+	      <span className="generacion">
+                Generación: {this.state.t}
+              </span>
             <span className="botones">
 	      <PlayButton onClick={this.handlePlay.bind(this)}
                           on={this.state.on}
@@ -163,11 +159,10 @@ class App extends Component {
 	          data={this.state.data}
                   rows={this.props.rows}
      	          cols={this.props.cols}
-               	  cellSize={25}
-	    />
+               	  cellSize={25}  />
 
-	</div>
-      </div>
+	    </div>
+            </div>
     );
   }
 }
