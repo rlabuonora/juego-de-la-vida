@@ -4,9 +4,19 @@ class Grid {
         this.height = data.length;
         this.width = data[0].length; // falla si pasa un ragged array
     }
+
+    cells(i, j) {
+        return this.data[i][j];
+    }
 }
 
-export { Grid };
+class Cell {
+    constructor(on) {
+        this.state = on; // boolean
+    }
+}
+
+export { Grid, Cell };
 
 
 
