@@ -3,6 +3,8 @@ class Grid {
         this.data = data;
         this.height = data.length;
         this.width = data[0].length; // falla si pasa un ragged array
+        // set reference to this
+        this.data.map( row => row.map(cell => cell.grid = this));
     }
 
     cells(i, j) {

@@ -1,42 +1,36 @@
 import { Grid, Cell } from './Grid';
 
 
-describe('Grid', () => {
-    test('Grid constructor', () => {
+let cell1 = new Cell(false);
+let data = [[cell1, new Cell(false)],
+            [new Cell(false), new Cell(false)]];
+let grid = new Grid(data);
 
-        let cell1 = new Cell(false);
-        let data = [[cell1, new Cell(false)],
-                    [new Cell(false), new Cell(false)]];
-        
-        let grid = new Grid(data);
+
+describe('Grid', () => {
+
+    test('Grid constructor', () => {
         expect(grid.cells(0, 0)).toBe(cell1);
-        
     });
 
-    test('Grid constructor sets height & width', () => {
-        let data = [[new Cell(false), new Cell(false)],
-                    [new Cell(false), new Cell(false)]];
-        
-        let grid = new Grid(data);
+    test('Grid height & width', () => {
         expect(grid.height).toBe(2);
         expect(grid.width).toBe(2);
     });
 
 
-    test('Grid', () => {
-
+    test('Set cell state', () => {
+        grid.cells(0, 0).on = true;
+        expect(grid.cells(0, 0).on).toBe(true);
     });
 });
 
 
 describe('Cell', () => {
-    xtest('Get cell state', () => {
-
+    test('Cell references parent grid', () => {
+        expect(cell1.grid).toBe(grid);
+        expect(grid.cells(0, 0).grid).toBe(grid);
         
     });
-
-    xtest('Turn cell on (only in a board)', () => {
-
-    });
-
+    
 });
