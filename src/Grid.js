@@ -26,7 +26,6 @@ class Grid {
             .filter(([row_offset, col_offset]) => this.data[i+row_offset][j+col_offset])
             .length;
         
-        
     }
     siguiente() {
         // TODO implement
