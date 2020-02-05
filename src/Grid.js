@@ -1,5 +1,6 @@
 class Grid {
     constructor(data) {
+        // copiar el array que nos pasan
         this.data = JSON.parse(JSON.stringify(data)); 
         this.height = data.length;
         this.width = data[0].length; // falla si pasa un ragged array
