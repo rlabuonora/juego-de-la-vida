@@ -171,29 +171,4 @@ describe('Grid', () => {
         const actual = grid.siguiente();
         expect(actual.equals(new_grid)).toBe(true);
     });
-
-    xtest('Cells en la (2, 2) de una matriz 3 x 3', () => {
-
-        // a 3 x 3 grid
-        let grid = new Grid([
-            [false, false, false],
-            [false, false, false],
-            [false, false, false]
-        ]);
-        const actual = grid.cells(2, 2).neighbors()
-        expect(actual.length).toBe(3);
-        
-    });
-
-    xtest('Cells en la 0, 1 de una matriz 3 x 3', () => {
-        
-        let grid = new Grid([
-            [false, false, false],
-            [false, false, false],
-            [false, false, false]
-        ]);
-        const actual = grid.cells(1, 1).neighbors()
-        console.log(actual);
-        expect(actual.length).toBe(8);
-    });
 });
