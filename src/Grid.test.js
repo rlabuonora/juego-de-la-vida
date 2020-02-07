@@ -41,7 +41,7 @@ describe('Grid', () => {
         
     });
 
-    test('Grid.equal con despues de cambiar', () => {
+    test('Grid.equal despues de cambiar una celda', () => {
         
         let data_1 = [[false, true],
                       [false, false]];
@@ -55,6 +55,20 @@ describe('Grid', () => {
         grid_1.set_estado(0, 0, true);
 
         expect(grid_1.equals(grid_2)).toBe(false);
+        
+    });
+
+    test('Grid.equal genera un nuevo Grid', () => {
+        
+        let data_1 = [[false, true],
+                      [false, false]];
+
+
+        let grid_1 = new Grid(data_1);
+        
+        let grid_2 = grid_1.set_estado(0, 0, true);
+        expect(grid_2).toBeDefined();
+        expect(grid_1 === grid_2).toBe(false);
         
     });
 

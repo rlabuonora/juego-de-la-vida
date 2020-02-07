@@ -23,6 +23,7 @@ class Grid {
     }
     set_estado(i, j, new_val) {
         this.data[i][j] = new_val;
+        return new Grid(this.data);
     }
     vecinos_vivos(i, j) { // devuelve la cantidad de vecinas vivos  de i, j
         // todos los posibles offsets de la celda i, j [[-1, -1], [-1, 0], [-1, 1], ..., [1, 1]]
