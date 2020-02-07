@@ -17,13 +17,13 @@ class Board extends React.Component {
     }
     render() {
         return (
-            <svg width="100" height="100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <svg width="400" height="400"
+                 version="1.1" xmlns="http://www.w3.org/2000/svg">
                 { this.renderCell(0, 0) }
                 { this.renderCell(0, 1) }
                 { this.renderCell(1, 0) }
                 { this.renderCell(1, 1) }
             </svg>
-
         );
     }
 }

@@ -83,6 +83,17 @@ describe('Grid', () => {
         expect(grid_1.get_estado(1, 1)).toBe(false);
     });
 
+    test('Grid.toggle_estado', () => {
+        
+        let data_1 = [[false, false],
+                      [false, true]];
+
+        let grid_1 = new Grid(data_1);
+        // cambiar 1, 1 a false
+        grid_1.toggle_estado(1, 1)
+        expect(grid_1.get_estado(1, 1)).toBe(false);
+    });
+
     test('Grid copia el array', () => {
         
         let data_1 = [[false, false],
