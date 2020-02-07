@@ -4,8 +4,13 @@ import Board from './Board';
 import './App.css';
 
 class App extends React.Component {
+    handleClick(i, j) {
+
+        console.log(i, j);
+
+    }
     render() {
-       return (<Board />);
+       return (<Board onClick={(i, j) =>  this.handleClick(i, j)} />);
     }
 }
 

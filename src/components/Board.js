@@ -7,22 +7,22 @@ class Board extends React.Component {
     handleClick(i, j) {
         console.log(i, j);
     }
-    renderCell(i, j) {
+    renderCell(i, j, state) {
         var svgPos = getSVGPos(i, j);
         return (
-            <Cell x={svgPos.x} y={svgPos.y}
+            <Cell x={svgPos.x} y={svgPos.y} live={state}
                   i={i}        j={j}
-                  onClick={(i, j) => this.handleClick(i, j)} />
+                  onClick={(i, j) => this.props.onClick(i, j)} />
         );
     }
     render() {
         return (
             <svg width="400" height="400"
                  version="1.1" xmlns="http://www.w3.org/2000/svg">
-                { this.renderCell(0, 0) }
-                { this.renderCell(0, 1) }
-                { this.renderCell(1, 0) }
-                { this.renderCell(1, 1) }
+                { this.renderCell(0, 0, true) }
+                { this.renderCell(0, 1, true) }
+                { this.renderCell(1, 0, false) }
+                { this.renderCell(1, 1, false) }
             </svg>
         );
     }
