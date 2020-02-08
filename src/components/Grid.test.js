@@ -103,7 +103,7 @@ describe('Grid', () => {
         expect(grid_1.get_estado(1, 1)).toBe(false);
     });
 
-    test.only('Grid.toggle_cell', () => {
+    test('Grid.toggle_cell', () => {
 
         let data_1 = [[false, false],
                       [false, true]];

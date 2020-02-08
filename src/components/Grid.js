@@ -21,8 +21,8 @@ class Grid {
     get_estado(i, j) {
         return this.data[i][j];
     }
-    toggle_estado(i, j) {
-        let new_data = this.data;
+    toggle_cell(i, j) {
+        let new_data = this.data.slice();
         new_data[i][j] = !new_data[i][j];
         return new Grid(new_data); // el constructor hace la copia del array
     }
