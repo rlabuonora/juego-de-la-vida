@@ -22,7 +22,7 @@ class App extends Component {
 	  data: initialGrid
     };
   }
-    
+
   neighbors(i,j) { // devuelve un array con los vecinos de la cell(i, j)
     var result = [];
     for (var offset_1 = -1; offset_1 <= 1; offset_1++) {
@@ -81,16 +81,16 @@ class App extends Component {
       });
     })
   }
-  emptyGrid() { 
+  emptyGrid() {
     var width = this.props.cols;
     var height = this.props.rows;
     var a = new Array(height);
-      
-    for (var i = 0; i < height; i++) { 
+
+    for (var i = 0; i < height; i++) {
       a[i] = new Array(width);
       for (var j = 0; j < width; j++) {
         a[i][j] = false;
-      }
+      }                         //
     }
     return a;
   }
@@ -110,7 +110,7 @@ class App extends Component {
   stop() {
     var initialGrid = this.emptyGrid(this.props.cols, this.props.rows);
     clearInterval(this.state.intervalId);
-    this.setState({ 
+    this.setState({
         on: false,
 	t: 0,
 	data: initialGrid,
@@ -119,7 +119,7 @@ class App extends Component {
   start() {
       var intervalId = setInterval(this.tick.bind(this),
 				   this.props.speed);
-    this.setState({ on: true, 
+    this.setState({ on: true,
 	            intervalId: intervalId });
   }
 
@@ -155,7 +155,7 @@ class App extends Component {
 	            </span>
 	        </div>
 	        <div className="row">
-	            
+
                     <Grid handleClick={this.handleClick.bind(this)}
 	                  data={this.state.data}
                           rows={this.props.rows}
@@ -183,7 +183,7 @@ class Grid extends Component {
       var cells = [];
       this.props.data.forEach(function(row, i) {
 	  row.forEach(function(cell, j) {
-	    cells.push(<Cell 
+	    cells.push(<Cell
 		         handleClick={this.props.handleClick.bind(this)}
 		         live={cell}
 		         cellSize={this.props.cellSize}
@@ -207,7 +207,7 @@ class Cell extends Component {
   getColor() {
       return this.props.live ? "grey" : "white";
   }
-  getSVGPos() { 
+  getSVGPos() {
   // Transforma las coordenadas de la grilla a coordenadas del SVG
   // https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Positions
       var svg_x_pos = this.props.coords.y * this.props.cellSize
@@ -216,20 +216,20 @@ class Cell extends Component {
   }
   onRectClick(event) {
     event.preventDefault();
-    this.props.handleClick(this.props.coords.x, 
+    this.props.handleClick(this.props.coords.x,
 			   this.props.coords.y);
   }
   render() {
       var svgPos = this.getSVGPos();
       return (
-	      <rect 
+	      <rect
 	            onClick={this.onRectClick.bind(this)}
-	            x={ svgPos.x } 
-                    y={ svgPos.y } 
-	            width={ this.props.cellSize } 
-                    height={ this.props.cellSize } 
-	            fill={ this.getColor() } 
-                    stroke="black" 
+	            x={ svgPos.x }
+                    y={ svgPos.y }
+	            width={ this.props.cellSize }
+                    height={ this.props.cellSize }
+	            fill={ this.getColor() }
+                    stroke="black"
                     strokeWidth="1"/>
       );
   }
@@ -238,7 +238,7 @@ class Cell extends Component {
 class PlayButton extends Component {
 
   icon() {
-      return this.props.on ? 
+      return this.props.on ?
 	  <i className="fa fa-pause" aria-hidden="true"></i> :
 	  <i className="fa fa-play" aria-hidden="true"></i>
   }
@@ -255,7 +255,7 @@ class StopButton extends Component {
   render() {
       return (
               <button onClick={this.props.stop}
-	              className="btn btn-secondary"> 
+	              className="btn btn-secondary">
 	        <i className="fa fa-stop" aria-hidden="true"></i>
 	      </button>
       );
