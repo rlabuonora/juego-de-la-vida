@@ -7,8 +7,8 @@ class Grid {
     }
     equals(other) {
     // una Grid es igual a otra si tiene las mismas celdas vivas
-        if (other.height != this.height) return false;
-        if (other.width != this.width) return false;
+        if (other.height !== this.height) return false;
+        if (other.width !== this.width) return false;
 
         var diff = this.data.map((nested_arr, i) => {
             return nested_arr.map((cell, j) => {
@@ -58,7 +58,7 @@ class Grid {
         // iterar por toda la grilla:
         // [ (0, 0), (0, 1), ..., (0, this.width-1), (1, 0), ..., (this.height-1, this.width-1)]
 
-        // Estaria bueno mejorar la iteracion por las celdas
+        // TODO: usar this.cells() o forEach
         this.data.map((nested_arr, i) => {
             return nested_arr.map((cell, j) => {
                 // contar cuantos vecinos vivos tiene
@@ -75,15 +75,16 @@ class Grid {
     }
     cells() {
         // iterar por todas las celdas: => [ {i: 0, j: 0, live: true}, ...]
+        // customizar this.forEach
+        // usar forEach en el array en vez de map
         let result = [];
         this.data.map((nested_arr, i) => {
-            nested_arr.map((cell, j) => {
+            return nested_arr.map((cell, j) => {
                 result.push( {i: i, j:j, live: this.data[i][j]})
-
             });
         });
         return result;
     }
 }
 
-export { Grid };
+export default Grid;
