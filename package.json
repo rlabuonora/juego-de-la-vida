@@ -13,7 +13,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -32,6 +32,12 @@
     ]
   },
   "devDependencies": {
+<<<<<<< HEAD
     "fsevents": "^2.1.2"
+=======
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.4",
+    "@babel/plugin-syntax-bigint": "^7.8.3"
+>>>>>>> react-refact
   }
 }

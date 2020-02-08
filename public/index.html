@@ -11,7 +11,7 @@
        />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    
+
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -34,18 +34,17 @@
     <div class="col-lg-6 col-sm-4">
       	    <h3> El Juego de la Vida <span class="gh"><a target="_blank" href="https://github.com/rlabuonora/juego-de-la-vida">  <i class="fa fa-github" aria-hidden="true"></i></a></span></h3>
 	    <div className="texto">
-            <p>El juego de la vida de John Conway es un simulador de autómatas celulares. El objetivo del simulador es mostrar como a partir de pocas reglas simples se pueden obtener sistemas con comportamientos complejos y caóticos. Cada celda representa un organismo. En cada generación, estos organismos viven o mueren de acuerdo a cuantos organismos vivos tienen alrededor.</p>
+            <p>El juego de la vida de John Conway es un simulador de autómatas celulares. El objetivo del simulador es mostrar como a partir de pocas reglas simples se pueden obtener sistemas con comportamientos complejos y caóticos. Cada celda representa un organismo. En cada generación, un organismo vive o muere de acuerdo a cuantos organismos vivos tienen alrededor.</p>
 	    <ul>
-	      <li> Si un organismo tiene 2 organismos vivos alrededor se mantiene viva. </li>
-	      <li> Si tiene menos de dos organismos vivos alrededor se muere.
-	      <li> Si una celda está muerta pero tiene 3 celdas vivas alrededor, revive.</li>
+	      <li> Si un organismo tiene 2 organismos vivos alrededor se mantiene vivo en la siguiente generación. </li>
+	      <li> Si tiene menos de dos organismos vivos alrededor muere.
+	      <li> Si un organismo está vivo pero tiene 3 organismos vivos alrededor, revive.</li>
             </ul>
 
 	    <p>Para hacer un experimento, selecciona las celdas que empiezan vivas y apreta play para que empiece la simulación. Algunos ejemplos interesantes (tomados de <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">la página de Wikipedia</a>):</p>
 
 
 	    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Game_of_life_beacon.gif" />
-	    <img src="https://upload.wikimedia.org/wikipedia/commons/3/37/Game_of_life_animated_LWSS.gif" />
   	    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Game_of_life_block_with_border.svg/66px-Game_of_life_block_with_border.svg.png" />
 	    <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Game_of_life_blinker.gif" />
 	    </div>
