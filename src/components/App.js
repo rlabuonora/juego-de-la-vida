@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Cell from './Cell';
 import Board from './Board';
 import Grid from './Grid';
+import PlayButton from './PlayButton';
+import StopButton from './StopButton';
 import './App.css';
 
 // Global consts
@@ -97,30 +99,7 @@ class App extends React.Component {
 }
 
 // TODO: Mover a otro archivo y convertir en funciones
-class PlayButton extends Component {
-    icon() {
-        return this.props.on ?
-	    <i className="fa fa-pause" aria-hidden="true"></i> :
-	    <i className="fa fa-play" aria-hidden="true"></i>
-    }
-    render() {
-        return (
-                <button onClick={this.props.onClick} className="btn btn-secondary"> {this.icon() }
-	        </button>
-        );
-    }
-}
 
-class StopButton extends Component {
-    render() {
-        return (
-                <button onClick={this.props.onClick}
-	                className="btn btn-secondary">
-	            <i className="fa fa-stop" aria-hidden="true"></i>
-	        </button>
-        );
-    }
-}
 
 
 export default App;
