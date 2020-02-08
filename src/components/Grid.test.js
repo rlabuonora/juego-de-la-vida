@@ -103,15 +103,16 @@ describe('Grid', () => {
         expect(grid_1.get_estado(1, 1)).toBe(false);
     });
 
-    test('Grid.toggle_estado', () => {
+    test.only('Grid.toggle_cell', () => {
 
         let data_1 = [[false, false],
                       [false, true]];
 
         let grid_1 = new Grid(data_1);
         // cambiar 1, 1 a false
-        grid_1.toggle_estado(1, 1)
-        expect(grid_1.get_estado(1, 1)).toBe(false);
+        let grid_2 = grid_1.toggle_cell(1, 1)
+        expect(grid_2.get_estado(1, 1)).toBe(false);
+        expect(grid_2).not.toBe(grid_1);
     });
 
     test('Grid copia el array', () => {
