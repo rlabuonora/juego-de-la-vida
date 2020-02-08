@@ -49,9 +49,15 @@
 
 }
 
+.board {
+    margin-left: 100px;
+}
+
 .botones {
     margin-left: 25px;
 }
+
+
 
 p {
     text-align: left;
