@@ -21,7 +21,9 @@ class App extends React.Component {
         };
     }
     handleClick(i, j) {
-        console.log(i, j);
+        this.setState({
+            grid: this.state.grid.toggle_cell(i, j)
+        })
     }
     render() {
         return (<Board

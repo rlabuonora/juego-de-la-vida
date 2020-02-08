@@ -17,8 +17,6 @@ class Board extends React.Component {
             (cell) => this.renderCell(cell.i, cell.j, cell.live)
         );
 
-        console.log(cells);
-
         return (
             <svg width="400" height="400"
             version="1.1" xmlns="http://www.w3.org/2000/svg">
