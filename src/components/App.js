@@ -8,10 +8,6 @@ import { EMPTY_DATA, BEACON, TOAD } from './InitialStates.js'
 import { HEIGHT, WIDTH, SPEED } from './InitialStates.js'
 import './App.css';
 
-// Global consts
-
-
-
 class App extends React.Component {
     constructor(props) {
         super(props);
@@ -95,9 +91,5 @@ class App extends React.Component {
         );
     }
 }
-
-// TODO: Mover a otro archivo y convertir en funciones
-
-
 
 export default App;
