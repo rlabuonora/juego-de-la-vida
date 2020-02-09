@@ -4,21 +4,19 @@ import Board from './Board';
 import Grid from './Grid';
 import PlayButton from './PlayButton';
 import StopButton from './StopButton';
+import { EMPTY_DATA, BEACON, TOAD } from './InitialStates.js'
+import { HEIGHT, WIDTH, SPEED } from './InitialStates.js'
 import './App.css';
 
 // Global consts
-const HEIGHT = 8;
-const WIDTH = 8;
-const SPEED = 500;
+
+
 
 class App extends React.Component {
     constructor(props) {
         super(props);
-        // inicizar parametros
 
-        // inicializar grid
-        const data = Array(HEIGHT).fill(Array(WIDTH).fill(false));
-        const grid = new Grid(data);
+        const grid = new Grid(TOAD);
 
         this.state = {
             grid: grid,
