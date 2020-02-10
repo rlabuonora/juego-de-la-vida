@@ -4,6 +4,6 @@ import App from './components/App';
 import './index.css';
 
 ReactDOM.render(
-  <App rows={8} cols={8} speed={500} />,
+  <App />,
   document.getElementById('root')
 );
